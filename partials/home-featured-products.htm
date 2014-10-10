@@ -1,0 +1,11 @@
+{% if featuredCollection %}
+  {% for product in featuredCollection.products %}
+  {{ open_form({'class': 'custom', 'onsubmit': 'return false'}) }}
+    <div class="col-md-12 feature-item">
+        {{ partial('shop-product', {'product':product}) }}
+    </div>
+	{{ close_form() }}
+  {% endfor %}
+{% else %}
+  <p class="flash success">The product collection was not found. Please create this group on the Shop/Collections page.</p>
+{% endif %}

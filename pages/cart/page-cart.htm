@@ -1,0 +1,14 @@
+---
+action: 'shop:cart'
+template: template-1
+protocol: all
+published: true
+name: Cart
+url: /cart
+---
+
+<div class="row content" id="cartt">
+  {{ open_form({'class': 'custom'}) }}
+    <div id="cart-content">{{ partial('shop-cart-content') }}</div>
+  {{ close_form() }}    
+</div>

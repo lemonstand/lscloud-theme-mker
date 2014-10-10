@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <ul class="nav navbar-nav navbar-left">
+    <li><a href="{{ site_url('/') }}"><img src="{{ 'img/logo.png'|theme_resource }}" alt=""></a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li id="search-button">
+      <a id="search-item"><i class="fa fa-search fa-lg"></i></a>
+        {{ open_form({'role': 'form', 'method': 'get', 'action': site_url('search')}) }}               
+            <input type="text" class="search-form form-control" name="query" id="query" placeholder="Press enter after your search." autocomplete="off" value="{{query|unescape}}">
+        {{ close_form() }}
+    </li>
+    <li>
+      <a id="menu-link"><i class="fa fa-bars fa-lg"></i></a>
+    </li>
+    <li>
+      <a href="{{ site_url('cart') }}" class="cart-link"><img src="{{ 'img/bag.png'|theme_resource }}" alt=""></i></a>
+      <span class="cart-count">{{ cart.getItemNum() }}</span>
+    </li>    
+  </ul>
+</nav>
+<div class="nav-drop">
+  <ul>
+    <li id="nav-brand"><a href="{{ site_url('home') }}"><img src="{{ 'img/logowhite.png'|theme_resource }}" alt=""></a></li>
+    <li><a href="{{ site_url('home') }}">Home</a></li>
+    <li><a href="{{ site_url('shop') }}">Store</a></li>
+    <li><a href="{{ site_url('about') }}">About</a></li>
+    <li><a href="{{ site_url('contact') }}">Contact</a></li>
+    <li>
+      {% if customer %}
+        <p><a href="{{ site_url('profile') }}">{{ customer.first_name }}</a> <a href="{{ site_url('logout') }}">| Logout</a></p>
+      {% else %}
+      <a href="{{ site_url('login') }}">Login</a>
+      {% endif %}
+    </li>
+    <li>
+      <a href="#"><i class="fa fa-facebook fa-2x"> </i></a>
+      <a href="#"><i class="fa fa-twitter fa-2x"> </i></a>
+      <a href="#"><i class="fa fa-instagram fa-2x"> </i></a>
+    </li>
+  </ul>
+</div>
+<div class="layer"></div>

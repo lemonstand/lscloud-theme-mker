@@ -1,0 +1,69 @@
+	{% set on_sale = product.onSale %}
+	<div id="product-gallery" class="col-md-6">
+		
+		<div class="col-md-12" id="main-img">
+			<img id="big-thumb" src="{{ product.image.thumbnail('auto','auto') }}" alt="{{ product.name }}">
+		</div>
+
+		<div class="col-md-12 thumblist">
+			{% for image in product.images %}
+				<img onclick='changeImage("{{ image.thumbnail('auto', 'auto') }}")' src="{{ image.thumbnail('auto', 'auto') }}" alt="{{ product.name }}">
+			{% endfor %}
+		</div>
+			
+			
+
+	</div>
+
+	<div id="product-detail" class="col-md-6">
+	  <h2>{{ product.name }}</h2> 
+	  <p>{{ product.price|currency }}</p>
+	  	{% if on_sale %}
+				<small class="previous-price">{{ product.fullPrice|currency }}</small>
+			{% endif %} 
+	  	{{ partial('shop-product-attributes', {'product':product}) }}
+		{% if product.enabled %}
+      {{ partial('shop-product-options', {'product':product}) }}
+      
+    {% if not product.isOutOfStock() or product.allow_preorder %}
+      <input type="hidden" name="productId" value="{{ product.id }}"/>
+	      <div class="add-cart-holder form-group">
+	        {{ flash() }}
+	        <div class="quantity-selector">
+	        	<label for="quantity">Quantity</label>
+	          <input class="form-control quantity" type="text" value="{{ quantity|default("1") }}" name="quantity"/>
+	        </div>
+	        <a class="btn btn-default btn-add-cart" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#mini-cart=shop-minicart, #product-page=shop-product, #navbar-totals=shop-minicart-totals">Add to Cart </a>
+	        <p>{{product.description|unescape}}</p>
+	      </div>
+	      
+	    {% else %}
+	      <div class="not-available">
+	        <h5>This product is temporarily unavailable</h5>
+	      <div>
+	    {% endif %}
+	    
+	  {% else %}
+	    <div class="not-available">
+	      <h5>This product is not available</h5>
+	    <div>
+  {% endif %}
+
+	
+	</div>
+
+
+<script type="text/javascript">
+	function changeImage(a) {
+	  document.getElementById("big-thumb").src=a;
+	};
+</script>
+
+
+
+
+
+
+
+
+

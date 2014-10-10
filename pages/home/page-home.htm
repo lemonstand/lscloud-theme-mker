@@ -1,0 +1,67 @@
+---
+action: 'shop:product'
+template: template-1
+protocol: all
+published: true
+name: Urban Essence
+url: /
+---
+
+<div class="row" id="title">
+  <div class="content">
+    <div class="col-md-12">
+      <h1>Have an idea but don't know how to execute?</h1>
+      <h4>Get Mker to do all the prototyping work for you</h4>
+      <a href="#feature" class="btn btn-important">Order Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="row" id="product-about">
+  <div class="content">
+    <h2>Mker is an online prototyping tool and UI kit.</h2><br>
+    <p>One page website creation has never been so easy. With a drag and drop interface it's easy for designers. Code blocks are produced in Bootstrap.</p>
+    <img src="{{ 'img/mker1.jpg'|theme_resource }}" alt="mker1">
+  </div>
+</div>
+
+<div class="row screen" id="product-drag">
+  <div class="content">
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <img src="{{ 'img/drag.jpg'|theme_resource }}" alt="drag">
+      </div>
+      <div class="col-md-6">
+      <br><br>
+        <h4>Drag and Drop</h4>
+        <p>Simple drag and drop interface allows you to pick what you want to add to your site.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row screen" id="product-fix">
+  <div class="content">
+    <div class="col-md-12">
+      <div class="col-md-6">
+      <br><br>
+        <h4>Customize Right Away</h4>
+        <p>Easy to use pop up window in order to customize what you have just dropped.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="{{ 'img/customize.jpg'|theme_resource }}" alt="customize">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" id="feature">
+  <div class="content">
+    <div class="col-md-12">
+      <h2>Purchase a copy of Mker today.</h2><br><br>
+      
+      {{ partial('home-featured-products', {'featuredCollection': 'featuredCollection'|collection, 'product':product }) }}
+
+    </div>
+  </div>
+</div>
