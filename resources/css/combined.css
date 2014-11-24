@@ -412,23 +412,17 @@ a:hover{
         CATEGORIES PAGE
 =============================================*/
 #dropdownMenu1{
-  border-radius:2px;
   backround-color:white;
-  border-radius:4px;
-  outline:none;
+  border-radius:0;
 }
 .dropdown-menu{
   border-radius:0;
-  background:#FAFAFA;
-  border:1px solid rgba(0,0,0,0.09);
+  border:none;
   box-shadow: none;
-  border-radius:4px;
 }
 .btn-drop{
-  background:rgba(0,0,0,0.02);
-  border:1px solid rgba(0,0,0,0.09);
-  padding-bottom:10px;
-  margin-bottom:0;
+  background:white;
+  border:1px solid rgba(0,0,0,0.1);
 }
 /*============================================
         PROFILE PAGE
@@ -1028,12 +1022,13 @@ a:hover{
     letter-spacing: 0em;
     font-size:1em;
     border:none;
+    position:relative;
   }
   .navbar .content{
     width:95%;
   }
   .nav > li {
-    display:block;
+    display:inline-block;
     text-align: center;
   }
   .navbar-toggle{
@@ -1079,71 +1074,72 @@ a:hover{
     float:none;
     width:200px;
   }
+  .nav-drop{
+    position:fixed;
+    width:100%;
+    height:100%;
+    right:-100%;
+    top:125px;
+    background:#292F33;
+    font-weight:100;
+    text-align:center;
+    z-index:9;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .drop-nav{
+    right:0;
+  }
+  .cart-count{
+    position: absolute;
+    z-index: 10;
+    top: 18px;
+    right: 0;
+    bottom: 3px;
+    left: 0px;
+    color: #ffffff !important;
+    font-weight: 300;
+    text-align: center;
+    font-size: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    pointer-events:none;
+  }
 /*============================================
      INDEX PAGE = INTRO
 =============================================*/
-#intro{
-  position:relative;
-  width:100%;
+#title{
   height:250px;
-  text-transform: uppercase;
-  color:white;
-  text-align: center;
-  margin-top:0;
+  padding-top:40px;
+  margin-right:0;
+  margin-left:0;
 }
-
-#intro-right{
-  background:red;
-  height:100px;
+#title h1{
+  font-size:1.2em;
+  padding-top:0;
 }
-#intro-left{
-  background:blue;
-  height:100px;
+#title h4{
+  font-size:1em;
 }
-/*============================================
-     INDEX PAGE = INTRO-INFO
-=============================================*/
-#intro-info{
-  margin-left:10px;
+#product-drag, #product-fix, #product-about, #feature{
+  margin-right:0;
+  margin-left:0;
 }
-#intro-text{
+#product-about{
   width:95%;
-}
-#about-text{
-  border-right:none;
-  padding:7px;
-  text-align: justify;
   margin:0 auto;
 }
-#contact-text i{
-  font-size:20px;
-  padding:2px;
-}
-
 /*============================================
      FOOTER
 =============================================*/
-#sub-footer{
-  min-height:120px;
-  font-size:0.8em;
-  text-align:center;
-  border-top:1px solid rgba(0,0,0,0.3);
-  border-bottom:1px solid rgba(0,0,0,0.3);
-}
-#sub-footer .col-md-4{
-  padding-top:10px;
-}
-#sub-footer i{
-  font-size:1.3em;
-  padding-right:10px;
-}
-
 #main-footer{
-  width:80%;
+  width:100%;
   min-height:200px;
-  background:rgba(0,0,0,0.01);
-  color:black;
+  background:rgba(52,52,52,1);
+  color:white;
   text-align: left;
+  margin:0;
 }
 #foot-info p{
   font-size:0.7em;
@@ -1189,6 +1185,10 @@ a:hover{
 .item-detail h2{
   padding-top:0px;
   font-size:1em;
+}
+#shopp{
+  padding-top:0;
+  width:98%;
 }
 /*============================================
      INDEX PAGE = FEATURED
@@ -1263,26 +1263,44 @@ select {
 /*============================================
         ABOUT PAGE
 =============================================*/
-.about{
-  padding-top:0px;
+#about{
+  margin-top:0;
+  margin-bottom:20px;
+  width:95%;
 }
-.about h2{
-  font-size:1.3em;
+#about img{
+  width:50%;
+  height:auto;
 }
-.about h4{
-  font-size:1em;
+#about p{
+  width:90%;
 }
-
 /*============================================
      LOGIN/SIGNUP STYLES
 =============================================*/
+#login{
+  width:90%;
+  padding-top:0;
+}
 .input-sm{
-  border-radius:0px;
+  border-radius:4px;
 }
 .form-control:focus{
   border-color:black;
 }
-
+/*============================================
+     CONTACT STYLES
+=============================================*/
+#contact{
+  height:200px;
+}
+#contact h2{
+  font-size:1.3em;
+  padding-top:70px;
+}
+#contact-info, #contact-form{
+  width:90%;
+}
 /*============================================
      CART STYLES
 =============================================*/
