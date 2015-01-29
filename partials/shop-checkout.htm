@@ -1,7 +1,257 @@
-{% if step == 'billing_info' %}
-  {{ partial('shop-checkout-address') }}
-{% elseif step == 'shipping_method' %}
-  {{ partial('shop-checkout-shippingmethod') }}
-{% elseif step == 'pay' %}
-  {{ partial('shop-checkout-pay') }}
+{{ flash() }}
+
+  {% if step == 'billing_info' %}
+    {% set inputs %}
+      <input type="hidden" name="step" value="billing_info,shipping_info">
+      <input type="hidden" name="nextStep" value="shipping_method"/>
+    {% endset %}
+  {% elseif step == 'shipping_method' %}
+    {% set inputs %}
+      <input type="hidden" name="step" value="shipping_method">
+      <input type="hidden" name="nextStep" value="pay"/>
+    {% endset %}
+  {% elseif step == 'pay' %}
+    
+  {% endif %}
+
+
+<div id="address-form" class="row" style="padding-bottom: 10px;">
+
+{{ open_form({'class': 'custom', 'data-validation-message' : ''}) }}
+  <div class="col-md-12" style="padding-bottom: 0;">
+    <div class="col-md-6">
+
+      <p id="title-p-d">Billing Information</p>
+      
+      <div id="billing-info" class="row">
+        <div class="col-sm-6 form-group">
+          <input data-mirror type="text" class="form-control" name="billingInfo[firstName]" id="billing_firstName" value="{{ billingInfo.firstName }}" placeholder="Jonathan"/>
+          <span class="error small text-danger"></span>
+          <label for="billing_firstName">First Name</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input data-mirror type="text" class="form-control" name="billingInfo[lastName]" id="billing_lastName" value="{{ billingInfo.lastName }}" placeholder="Doe"/>
+          <label for="billing_lastName">Last Name</label>
+          <span class="error small text-danger"></span>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input type="email" class="form-control" name="billingInfo[email]" id="billing_email" value="{{ billingInfo.email }}" placeholder="example@email.com"/>
+          <span class="error small text-danger"></span>
+          <label for="billing_email">E-mail Address</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input data-mirror type="text" class="form-control" name="billingInfo[phone]" id="billing_phone" value="{{ billingInfo.phone }}" placeholder="(012)345-6789"/>
+          <span class="error small text-danger"></span>
+          <label for="billing_phone">Phone Number</label>
+        </div>
+        <div class="col-sm-12 form-group">
+          <input data-mirror type="text" class="form-control" id="billing_address" name="billingInfo[streetAddressLine1]" value="{{ billingInfo.streetAddressLine1 }}" placeholder="123 Example Dr"/>
+          <span class="error small text-danger"></span>
+          <label for="billing_address">Address</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input data-mirror type="text" class="form-control" name="billingInfo[city]" id="billing_city" value="{{ billingInfo.city }}" placeholder="Vancouver"/>
+          <span class="error small text-danger"></span>
+          <label for="billing_city">City</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input data-mirror type="text" class="form-control" id="billing_postalCode" name="billingInfo[postalCode]" value="{{ billingInfo.postalCode }}" placeholder="A1B2C3"/>
+          <span class="error small text-danger"></span>
+          <label for="billing_postalCode">Zip Code</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="billing_country" class="hide">Country</label>
+          <!-- 
+            The state selector updates automatically when the country changes. 
+            See app.js for the implementation details. 
+            -->        
+            <select data-mirror id="billing_country" class="chzn-select form-control" name="billingInfo[countryId]" data-state-selector="#billing_state" data-current-state="{{ billingInfo.stateId }}">
+            {% for country in countries %}
+            <option {{ option_state(billingInfo.countryId, country.id) }} value="{{ country.id }}">{{ country.name }}</option>
+            {% endfor %}
+            </select>
+          <span class="error small text-danger"></span>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="billing_state" class="hide">State</label>
+            <select data-mirror id="billing_state" class="chzn-select form-control" name="billingInfo[stateId]" data-ajax-refresh> 
+            {{ partial('shop-stateoptions', {'states': billingStates, 'selected': billingInfo.stateId}) }}
+            </select>
+          <span class="error small text-danger"></span>
+        </div>
+        <div class="col-md-6">
+        <a data-toggle-mirror="on" class="btn btn-default btn-form-mirror" href="#"><i class="fa fa-check" id="check-box"></i>Same as Billing information</a> 
+      </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <p id="title-p-d">Billing Information</p>
+
+      <div id="shipping-info" class="row">
+        <div class="col-sm-6 form-group">
+          <input  data-mirror type="text" class="form-control disabled" name="shippingInfo[firstName]" id="shipping_firstName" value="{{ shippingInfo.firstName }}" placeholder="First Name"/>
+          <span class="error small text-danger"></span>
+          <label for="shipping_firstName">First Name</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input data-mirror type="text" class="form-control disabled" name="shippingInfo[lastName]" id="shipping_lastName" value="{{ shippingInfo.lastName }}" placeholder="Last Name"/>
+          <span class="error small text-danger"></span>
+          <label for="shipping_lastName">Last Name</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input data-mirror type="text" class="form-control disabled" name="shippingInfo[phone]" id="shipping_phone" value="{{ shippingInfo.phone }}" placeholder="Phone Number"/>
+          <span class="error small text-danger"></span>
+          <label for="shipping_phone">Phone Number</label>
+        </div>
+        <div class="col-sm-12 form-group">
+          <input data-mirror type="text" class="form-control disabled" name="shippingInfo[streetAddressLine1]" id="shipping_address"  value="{{ shippingInfo.streetAddressLine1 }}" placeholder="Address"/>
+          <span class="error small text-danger"></span>
+          <label for="shipping_address">Address</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input data-mirror type="text" class="form-control disabled" name="shippingInfo[city]" id="shipping_city" value="{{ shippingInfo.city }}" placeholder="City"/>
+          <span class="error small text-danger"></span>
+          <label for="shipping_city">City</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input data-mirror type="text" class="form-control disabled" name="shippingInfo[postalCode]" id="shipping_postalCode" value="{{ shippingInfo.postalCode }}" placeholder="Zip Code"/>
+          <span class="error small text-danger"></span>
+          <label for="shipping_postalCode">Zip Code</label>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="shipping_country" class="hide">Country</label>
+            <select data-mirror id="shipping_country" class="chzn-select form-control disabled" name="shippingInfo[countryId]" data-state-selector="#shipping_state" data-current-state="{{ shippingInfo.stateId }}" >
+            {% for country in countries %}
+            <option {{ option_state(shippingInfo.countryId, country.id) }} value="{{ country.id }}">{{ country.name }}</option>
+            {% endfor %}
+            </select>
+          <span class="error small text-danger"></span>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="shipping_state" class="hide">State</label>
+            <select data-mirror id="shipping_state" class="chzn-select form-control disabled" name="shippingInfo[stateId]" data-ajax-refresh > 
+            {{ partial('shop-stateoptions', {'states': shippingStates, 'selected': shippingInfo.stateId}) }}
+            </select>
+          <span class="error small text-danger"></span> 
+        </div>
+        <div class="col-sm-12">
+          {% if step == 'billing_info' %}
+          <a class="btn btn-default pull-right" href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=shop-checkout">Next step</a>
+        {% else %}
+          <a class="btn pull-right" href="#" 
+        data-ajax-handler="shop:checkout" 
+        data-ajax-update="#checkout-page=shop-checkout"
+        data-ajax-extra-fields="nextStep=billing_info">Start Again</a>
+        {% endif %}
+        {{ inputs }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ close_form() }}
+
+</div>
+
+<!-- SHIPPING METHOD -->
+
+<div class="row" style="padding-top: 0;">
+
+
+<div id="shop-checkout-shipping-method" class="col-md-6">
+{{ open_form({'class': 'custom'}) }}
+
+    <div class="col-md-12">
+    <p id="title-p-d">Shipping Method</p>
+
+    {% if step == 'billing_info' %}
+      <p>Please fill out billing/shipping info</p>
+    {% elseif step == 'pay' %}
+      <p>Choose Payment method or start again</p>
+    {% elseif step == 'shipping_method' %}
+      {% if shippingOptions %}
+        <input type="hidden" value="" name="shippingMethod">
+        <table class="compact full-width" id="shipping-methods">
+          {% for index, option in shippingOptions %}
+            <tr>
+              <td>
+                <label for="{{ 'option'~index }}">
+                  <!-- The shipping method radio button clicks are handled in the app.js -->
+                  <input name="shippingMethod" 
+                    {{ option.error_hint ? 'disabled' : null }} 
+                    value="{{ index }}" 
+                    {{ radio_state(shippingMethodInfo.id, option.id) }}
+                    type="radio" id="{{ 'option'~index }}"/>
+                    
+                  <span class="choice-title">
+                    {{ option.shippingMethodName }}
+                    {% if option.shippingServiceName %}: {{ option.shippingServiceName }}{% endif %}
+                  </span>
+                  
+                  {% if option.error_hint %}
+                    <span class="choice-description error-hint">{{ option.error_hint }}</span>
+                  {% endif %}
+                </label>
+              </td>
+              <td class="narrow">
+                {% if not option.error_hint  %}
+                  {{ not option.is_free ? option.quote|currency : 'free' }}
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </table> 
+      {% else %}
+        <p>We are sorry, there are no shipping options available for your location.</p>
+      {% endif %}
+    {% endif %}
+
+    {% if shippingOptions %}
+        <br><br>
+        <a class="btn btn-default" href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=shop-checkout">Proceed to Pay</a>
+        {{ inputs }}
+   {% endif %}
+    </div>
+{{ close_form() }}
+</div>
+
+<!-- PAYMENT METHOD -->
+
+<div id="shop-checkout-payment-method" class="col-md-6">
+{% if cart %}
+    <div class="col-md-12">
+      <p id="title-p-d">Payment Method</p>
+      {% if step == 'billing_info' %}
+        <p>Please fill out billing/shipping info</p>
+      {% elseif step == 'shipping_method' %}
+        <p>Please choose a shipping method</p>
+      {% elseif order.payment_processed %}
+        <p class="flash info"><strong>Thank you!</strong> The payment is already processed for this order.</p>
+      {% else %}
+        <div id="payment_method">
+          <div class="col-md-12 columns" id="payment_form">
+            {% if step == 'billing_info' %}
+              <p>Please fill out billing/shipping info</p>
+            {% elseif step == 'shipping_method' %}
+              <p>Please choose a shipping method</p>
+            {% else %}
+              {{ open_form({'class': 'custom'}) }}
+                {% for method in paymentMethods %}      
+                  <input class="custom-radio" name="paymentMethodId" value="{{ method.id }}" type="radio" id="payment-method{{ method.id }}" />
+                  <label for="payment-method{{ method.id }}" class="choice-title h6"> {{ method.name }} |</label>
+                {% endfor %}
+                </form>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div id="payment_form">{{ partial('shop-paymentform') }}</div>  
+        </div>
+        
+      {% endif %}
+    </div>
+  </div>
+{% else %}
+  <p class="flash error">Order not found.</p>
 {% endif %}
+</div>

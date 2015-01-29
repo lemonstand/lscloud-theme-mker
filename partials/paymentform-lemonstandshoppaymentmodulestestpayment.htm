@@ -16,12 +16,12 @@ description: 'Payment form partial for Test Payment payment method'
       <span class="error small text-danger"></span> 
       <label for="LASTNAME">Cardholder Last Name</label>
     </div>
-    <div class="col-sm-4 form-group">
+    <div class="col-sm-6 form-group">
       <input class="form-control credit-card-input" autocomplete="off" name="ACCT" id="ACCT" type="text" placeholder="Credit Card Number" value="4111111111111111"/>
       <span class="error small text-danger"></span> 
       <label for="ACCT">Credit Card Number</label>
     </div>
-    <div class="col-sm-2 form-group helper">
+    <div class="col-sm-6 form-group helper">
       <input class="form-control" autocomplete="off" name="CVV2" value="123" id="CVV2" type="text" placeholder="CVV2"/>
       <span class="error small text-danger"></span> 
       <label for="CVV2">CVV2</label>
@@ -49,10 +49,6 @@ description: 'Payment form partial for Test Payment payment method'
     
   </div>
   <div class="clearfix">
-    <a class="btn btn-default pull-left" href="#" 
-        data-ajax-handler="shop:checkout" 
-        data-ajax-update="#checkout-page=shop-checkout, #checkout-progress=shop-checkout-progress, #mini-cart=shop-minicart"
-        data-ajax-extra-fields="nextStep=shipping_method">Previous Step</a>
-    <button type="submit" class="btn btn-important pull-right">Pay Now</button>
+    <button type="submit" class="btn btn-default pull-right">Pay Now</button>
   </div>
 </form>

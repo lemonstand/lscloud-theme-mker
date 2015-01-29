@@ -28,8 +28,8 @@
     </div>
     <a class="btn btn-default col-xs-12 btn-lg solid" href="#" data-ajax-handler="shop:cart" data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart, #navbar-totals=shop-minicart-totals">Update Cart <i class="fa fa-refresh"></i></a>
     {% if customer %}
-    <a class="col-xs-12 btn btn-important solid btn-lg" href="{{ site_url('/checkout') }}">Checkout</a>
+    <a class="col-xs-12 btn btn-default solid btn-lg" href="{{ site_url('/checkout') }}">Checkout</a>
     {% else %}
-    <a class="col-xs-12 btn btn-important solid btn-lg" href="{{ site_url('/checkout-start') }}">Checkout</a>
+    <a class="col-xs-12 btn btn-default solid btn-lg" href="{{ site_url('/checkout-start') }}">Checkout</a>
     {% endif %}
 </div>
