@@ -12,15 +12,14 @@
     <li>
       <a id="menu-link"><i class="fa fa-bars fa-lg"></i></a>
     </li>
-    <li>
-      <a href="{{ site_url('cart') }}" class="cart-link"><img src="{{ 'img/bag.png'|theme_resource }}" alt=""></i></a>
-      <span class="cart-count">{{ cart.getItemNum() }}</span>
+    <li id="cart-totals">
+      {{ partial('cart-totals') }}
     </li>    
   </ul>
 </nav>
 <div class="nav-drop">
   <ul>
-    <li id="nav-brand"><a href="{{ site_url('/') }}"><img src="{{ 'img/logowhite.png'|theme_resource }}" alt=""></a></li>
+    <li id="nav-brand"><a href="{{ site_url('/') }}"><img src="{{ 'img/logo.png'|theme_resource }}" alt=""></a></li>
     <li><a href="{{ site_url('/') }}">Home</a></li>
     <li><a href="{{ site_url('shop') }}">Store</a></li>
     <li><a href="{{ site_url('about') }}">About</a></li>

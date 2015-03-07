@@ -3,54 +3,43 @@ action: 'shop:product'
 template: template-1
 protocol: all
 published: true
-name: Urban Essence
+name: Home
 url: /
 ---
 
 <div class="row" id="title">
+  <img class="col-md-6" src="{{ 'img/product-bg.jpg'|theme_resource }}" alt="">
   <div class="content">
-    <div class="col-md-12">
-      <h1>Have an idea but don't know how to execute?</h1>
-      <h4>Get Mker to do all the prototyping work for you</h4>
-      <a href="#feature" class="btn btn-important">Order Now</a>
+    <div class="col-md-6 pull-right text-left">
+      <h1>MAKE A DIFFERENCE</h1>
+      <h4>Don't use unnecessary electricity when your electric devices are idle. Mker will make the change that you need for the environment.</h4>
+      <a href="#feature" class="btn btn-important ">Order Now for $79 <i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 </div>
 
-<div class="row" id="product-about">
-  <div class="content">
-    <h2>Mker is an online prototyping tool and UI kit.</h2><br>
-    <p>One page website creation has never been so easy. With a drag and drop interface it's easy for designers. Code blocks are produced in Bootstrap.</p>
-    <img src="{{ 'img/mker1.jpg'|theme_resource }}" alt="mker1">
-  </div>
+<div class="row seen">
+  
 </div>
 
-<div class="row screen" id="product-drag">
+<div class="row product-about gray-bg">
   <div class="content">
-    <div class="col-md-12">
-      <div class="col-md-6">
-        <img src="{{ 'img/drag.jpg'|theme_resource }}" alt="drag">
-      </div>
-      <div class="col-md-6">
-      <br><br>
-        <h4>Drag and Drop</h4>
-        <p>Simple drag and drop interface allows you to pick what you want to add to your site.</p>
-      </div>
+    <div class="col-md-6">
+      <h3>MKER IS THE PLUG EVERYONE NEEDS.</h3>
+      <h1>WHAT IS MKER?</h1><br>
+      <p>Save Power, Save the Planet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis tempus sem. In porttitor lectus ut magna porttitor, eget ultricies diam porta. Aliquam quis neque nec erat facilisis scelerisque sit amet eu erat. Maecenas eros magna, elementum ut mollis id, porttitor id nulla. Vestibulum ac velit ante. </p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="{{ 'img/home-product.png'|theme_resource }}" alt="">
     </div>
   </div>
 </div>
 
-<div class="row screen" id="product-fix">
+<div class="row screen product-drag">
   <div class="content">
-    <div class="col-md-12">
-      <div class="col-md-6">
-      <br><br>
-        <h4>Customize Right Away</h4>
-        <p>Easy to use pop up window in order to customize what you have just dropped.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="{{ 'img/customize.jpg'|theme_resource }}" alt="customize">
-      </div>
+    <div class="col-md-7">
+      <h2>Save Today.</h2>
+      <h3>Order your very own Mker and save both money and the environment. <br>Thousands of people are experiencing the difference. Will you take the step and make the difference?</h3>
     </div>
   </div>
 </div>
@@ -58,8 +47,7 @@ url: /
 <div class="row" id="feature">
   <div class="content">
     <div class="col-md-12">
-      <h2>Purchase a copy of Mker today.</h2><br><br>
-      
+
       {{ partial('home-featured-products', {'featuredCollection': 'featuredCollection'|collection, 'product':product }) }}
 
     </div>
