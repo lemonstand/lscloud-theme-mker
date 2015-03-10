@@ -98,7 +98,13 @@ i{
 .panel-body{
   padding-top:10px;
 }
-
+.success{
+  background: #00bbde;
+  padding: 4px;
+  color: white;
+  font-style: italic;
+  text-transform: uppercase;
+}
 a{
   color:rgba(0,0,0,0.5);
 }
@@ -1375,7 +1381,6 @@ select {
 }
 
 #cart-content{
-  display:;
 }
 #cart-img img{
   width:100%;
@@ -1518,6 +1523,8 @@ select {
 }
 .checkout-content{
   display: none;
+  background:blue;
+  height:500px;
   transition: 0.3s all ease-in-out;
   -moz-transition: 0.3s all ease-in-out;
   -webkit-transition: 0.3s all ease-in-out;
@@ -1527,6 +1534,9 @@ select {
 }
 #shop-checkout-payment-method{
   padding-top:20px;
+}
+#payment-method .custom-radio{
+  margin-right:10px;
 }
 #cart-img img{
   width:100%;
@@ -1577,6 +1587,7 @@ select {
 #shipping-methods tr{
   display:inline-block;
   margin-top:20px;
+  margin-right:20px;
   padding:20px;
   border:1px solid #f1f1f1;
 }

@@ -29,11 +29,11 @@
     {% if not product.isOutOfStock() or product.allow_preorder %}
       <input type="hidden" name="productId" value="{{ product.id }}"/>
 	      <div class="add-cart-holder form-group">
-	        {{ flash() }}
 	        <div class="quantity-selector">
 	          <label for="quantity">Quantity</label>
 	          <input class="form-control quantity" type="text" value="{{ quantity|default("1") }}" name="quantity"/>
 	        </div>
+	        {{ flash() }}
 	        <a class="btn btn-important btn-add-cart" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#product-page=shop-product, #cart-totals=cart-totals">Add to Cart  </a>
 	      </div>
 	      

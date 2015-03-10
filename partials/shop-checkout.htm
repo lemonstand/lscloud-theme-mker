@@ -11,8 +11,7 @@
   {% elseif step == 'pay' %}
       <input type="hidden" name="step" value="pay">
   {% endif %}
-
-<div class="row">
+<div class="row checkout-row">
 
 <div class="col-md-9">
   
@@ -200,7 +199,7 @@
     </div>
     <div class="col-sm-12">
         {% if step == 'billing_info' %}
-          <a class="btn btn-important pull-right data-ajax-url" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=shop-checkout, #checkout-totals=shop-checkout-totals" data-hash="step-2">Proceed to Shipping</a>
+          <a href="#top" class="btn btn-important pull-right data-ajax-url" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-totals=shop-checkout-totals, #checkout-page=shop-checkout" data-hash="step-2">Proceed to Shipping</a>
         {% else %}
           
         {% endif %}
@@ -251,7 +250,7 @@
 {% elseif step == 'shipping_method' %}
   <div class="checkout-content checkout-open ">
 {% elseif step == 'pay' %}
-  <div class="checkout-content ">
+  <div class="checkout-content">
 {% endif %}
 <div id="shop-checkout-shipping-method" class="col-md-12 row">
 {{ open_form({'class': 'custom'}) }}

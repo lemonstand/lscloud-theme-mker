@@ -1,3 +1,7 @@
+// variables needed for the window hashchange event
+var hashHistory = ['step-1'];
+var windowBack = true;
+
 $(document).ready(function() {
 
 //DROP DOWN MENU
@@ -9,11 +13,71 @@ $('.dropdown-text').on('tap', function() {
   $('.dropdown-content').toggleClass('dropdown-show');
 });
 
-//NAVIGATION
-$('#menu-link').click(function() {
-  $('.nav-drop').toggleClass('drop-nav');
-  $('.layer').toggleClass('show-layer');
+
+
+//Payment forms history
+$("#checkout-page").on('click', '.data-ajax-url', function(e) {
+    //Prevent the hashchange event from firing
+    windowBack = false;
+
+    //Set the window location equal to the data-hash attribute
+    window.location.hash = $(this).attr("data-hash");
+    e.preventDefault();
+    hashHistory.push($(this).attr('data-hash'));
+
+    if (window.innerWidth < 991) {
+      if($(this).attr('data-hash') == 'step-2'){
+        $("html, body").scrollTop(50);  
+      }
+    }
+    
+
+    // Allow the window to go back on hashchange 
+    setTimeout(function(){
+      windowBack = true;
+    }, 50);
 });
+
+$(window).on("hashchange", window, function(e) {
+  if(hashHistory[hashHistory.length - 2] == 'step-1' && windowBack == true){
+    $(document).sendRequest('shop:checkout', {
+      update: {
+        '#checkout-page': 'shop-checkout'
+      },
+      extraFields: {
+        'nextStep': 'billing_info'
+      }
+    });
+    hashHistory.splice(-2);
+    hashHistory.push('step-1');
+  }
+  else if(hashHistory[hashHistory.length - 2] == 'step-2' && windowBack == true){
+    $(document).sendRequest('shop:checkout', {
+      update: {
+        '#checkout-page': 'shop-checkout'
+      },
+      extraFields: {
+        'nextStep': 'shipping_method'
+      }
+    });
+    hashHistory.splice(-2);
+    hashHistory.push('step-2');
+  }
+  else if(hashHistory[hashHistory.length - 2] == 'step-3' && windowBack == true){
+    $(document).sendRequest('shop:checkout', {
+      update: {
+        '#checkout-page': 'shop-checkout'
+      },
+      extraFields: {
+        'nextStep': 'pay'
+      }
+    });
+    hashHistory.splice(-2);
+    hashHistory.push('step-3');
+  }
+});
+
+
 
 //PAY
 //Payment forms LEMONSTAND
@@ -25,12 +89,21 @@ $('#menu-link').click(function() {
           }        
       });
   });
-        
+
+//Shipping method update the price
+  $(document).on('change', '#shipping-methods input', function() {
+    $(this).sendRequest('shop:checkout', {
+      update:{
+        '#checkout-totals': 'shop-checkout-totals'
+      }
+    });
+  });
+
 
 //ADDRESS
     $(document).on('click', '.btn-form-mirror', function() {
       if ($(this).data('toggle-mirror') == 'on') {
-        $(this).data('toggle-mirror', 'off').find('.fa').css('visibility', 'hidden');
+        $(this).data('toggle-mirror', 'off').find('.fa-check').css('visibility', 'hidden');
         sessionStorage.toggleMirror = 'off';
 
         $('#shipping-info').each(function (i, div){
@@ -39,7 +112,7 @@ $('#menu-link').click(function() {
           });
         });
 
-      } else {
+      } else if ($(this).data('toggle-mirror') == 'off') {
         $(this).data('toggle-mirror', 'on').find('.fa').css('visibility', 'visible');
         sessionStorage.toggleMirror = 'on';
         mirrorAll();
@@ -112,14 +185,25 @@ $('#menu-link').click(function() {
       }
     });
 
+//Mobile shipping address functionality
+if (window.innerWidth < 991) {
+  $('#checkout-page #shipping-info').hide();
+  $('.btn-form-mirror').on('click', function() {
+    if($('.btn-form-mirror').data('toggle-mirror') == 'off') {
+      $('#shipping-info').hide();
+    } else if ($('.btn-form-mirror').data('toggle-mirror') == 'on'){
+      $('#shipping-info').show();
+    }
+  });
+}
 
 //SEARCH ITEM
   $(document).on('click', '#search-item', function() {
-      $('.search-form').toggleClass("active-search");  
+      $('.search-bar').toggleClass("active-search");  
   });
   $(document).on('click', '#normal-carts', function() {
-    if( $('.search-form').hasClass("active-search") ){
-      $('.search-form').removeClass("active-search");
+    if( $('.search-bar').hasClass("active-search") ){
+      $('.search-bar').removeClass("active-search");
     }else{
       return;
     }
@@ -209,13 +293,21 @@ if ('#checkout-page') {
         }
     }
   
-  $('.fa-question').on({
-    'mouseenter': function() {
-      $(this).popover('show');
-    },
-    'mouseleave': function() {
-      $(this).popover('hide');
-    }
+  // $('.fa-question').on({
+  //   'mouseenter': function() {
+  //     $(this).popover('show');
+  //   },
+  //   'mouseleave': function() {
+  //     $(this).popover('hide');
+  //   }
+  // });
+  var popoverimg = "<img src='//d1ikx7rs2s8wko.cloudfront.net/store-slate-543ef23235dfb/themes/asdfasdf/resources/img/cvn.jpg?1424897548' style='width:100px'>";
+  var popbreak = "</br>";
+  $('.fa-question').popover({
+            trigger: "hover",
+            placement: top,
+            html: true,
+            content: "For MasterCard, Visa, and Discover, the CSC is the last three digits in the signature area on the back of your card. For American Express, it's the four digits on the front of the card." + popbreak + popbreak + popoverimg
   });
 }
 });
