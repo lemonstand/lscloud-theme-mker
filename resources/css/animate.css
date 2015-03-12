@@ -26,3 +26,64 @@
   -webkit-animation-name: zoomIn;
           animation-name: zoomIn;
 }
+
+.success{
+  background: #00bbde;
+  padding: 4px;
+  color: white;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top:10px;
+  animation: fadeOut 1s;
+  -moz-animation: fadeOut 1s;
+  -webkit-animation: fadeOut 1s;
+  -o-animation: fadeOut 1s;
+
+  animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+
+  animation-delay:2s;
+  -moz-animation-delay:2s;
+  -webkit-animation-delay:2s;
+  -o-animation-delay:2s;
+
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+@-moz-keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+@-o-keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+
+
+

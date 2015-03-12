@@ -24,6 +24,7 @@
     <div class="buttons-holder">
         <div class="add-cart-holder">
         	<input type="hidden" name="productId" value="{{ product.id }}"/>
+            {{ flash() }}
             <a href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#mini-cart=shop-minicart, #product-page=shop-product">Add to Cart</a>
         </div>
     </div>

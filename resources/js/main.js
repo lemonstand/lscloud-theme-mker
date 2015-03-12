@@ -4,6 +4,19 @@ var windowBack = true;
 
 $(document).ready(function() {
 
+  var unslider = $('.banner').unslider({
+        fluid: false,
+        dots: false,
+        delay: false
+  });
+    
+    $('.unslider-arrow').click(function() {
+        var fn = this.className.split(' ')[1];
+        
+        //  Either do unslider.data('unslider').next() or .prev() depending on the className
+        unslider.data('unslider')[fn]();
+    });
+
 //DROP DOWN MENU
 $('.dropdown-text').click(function() {
   $('.dropdown-content').toggleClass('dropdown-show');
@@ -13,6 +26,11 @@ $('.dropdown-text').on('tap', function() {
   $('.dropdown-content').toggleClass('dropdown-show');
 });
 
+//NAVIGATION
+$('#menu-link').on('click', function() {
+  $('.nav-drop').toggleClass('drop-nav');
+  $('.layer').toggleClass('show-layer');
+});
 
 
 //Payment forms history

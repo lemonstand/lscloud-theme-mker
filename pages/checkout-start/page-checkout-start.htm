@@ -6,16 +6,15 @@ published: true
 name: Checkout
 url: /checkout-start
 ---
-<div class="row" id="checkout-start" style="padding-top: 100px;">
-    <div class="sign-in-holder">
+<div class="row" id="login" style="padding-top: 100px;">
         <div class="content">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <p id="title-p">Returning Customers</p>
                 {{ open_form({'data-ajax-handler': 'shop:onLogin', 'data-validation-message' : '', 'class' : 'form-horizontal' }) }}
 
                 <div class="form-group">
                     <label for="login_email" class="control-label">Email</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-12">
                         <input type="email" class="form-control input-sm" id="login_email" name="email" value="{{ post('email') }}" size="40" autofocus />
                         <span class="error small text-danger"></span>
                     </div>
@@ -23,31 +22,30 @@ url: /checkout-start
 
                 <div class="form-group">
                     <label for="login_password" class="control-label">Password</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-12">
                         <input type="password" class="form-control input-sm" id="login_password" name="password" size="20" />
                         <span class="error small text-danger"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-9">
+                    <div class="col-sm-12">
                         <button type="submit" class="btn btn-sm btn-default">Login</button>
                         <a class="btn btn-sm btn-link forgotpass" href="{{ site_url('password-restore') }}">Forgot your password?</a>
                     </div>
                 </div>
                 
-                <input type="hidden" name="redirect" value="{{ site_url(root_url('/cart')) }}"/>
+                <input type="hidden" name="redirect" value="{{ site_url(root_url('/checkout')) }}"/>
       
             {{ close_form() }}
-            </div>
-            <div class="col-xs-12 col-sm-6">
+            </div><br>
+            <div class="col-xs-12 col-sm-12">
                 <form class="form-guest-checkout">
                     <p id="title-p">Guest Checkout</p>
-                    <br>
                     <a href="{{ site_url('checkout') }}"><span class="btn btn-sm btn-default">Continue as a Guest</span></a>
-                    <a class="btn btn-sm btn-link" href="{{ site_url('login') }}"> Register</a>
+                    <br><br>
+                    <p>Don't have an account? <a href="{{ site_url('login') }}"> Register</a></p>
                 </form>
             </div>
         </div>
-    </div>
 </div>

@@ -8,11 +8,11 @@ url: /
 ---
 
 <div class="row" id="title">
-  <img class="col-md-6" src="{{ 'img/product-bg.jpg'|theme_resource }}" alt="">
+  <img class="col-md-6" src="{{ theme.homeHeaderImage.thumbnail('auto', 'auto') }}" alt="">
   <div class="content">
     <div class="col-md-6 pull-right text-left">
-      <h1>MAKE A DIFFERENCE</h1>
-      <h4>Don't use unnecessary electricity when your electric devices are idle. Mker will make the change that you need for the environment.</h4>
+      <h1>{{ theme.homeHeaderTitle }}</h1>
+      <h4>{{ content_block('home-text-1') }}</h4>
       <a href="#feature" class="btn btn-important ">Order Now for $79 <i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -25,12 +25,12 @@ url: /
 <div class="row product-about gray-bg">
   <div class="content">
     <div class="col-md-6">
-      <h3>MKER IS THE PLUG EVERYONE NEEDS.</h3>
-      <h1>WHAT IS MKER?</h1><br>
-      <p>Save Power, Save the Planet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis tempus sem. In porttitor lectus ut magna porttitor, eget ultricies diam porta. Aliquam quis neque nec erat facilisis scelerisque sit amet eu erat. Maecenas eros magna, elementum ut mollis id, porttitor id nulla. Vestibulum ac velit ante. </p>
+      <h3>{{ theme.homeSecondHeaderSubTitle }}</h3>
+      <h1>{{ theme.homeSecondHeaderTitle }}</h1><br>
+      <p>{{ content_block('home-text-2') }} </p>
     </div>
     <div class="col-md-6 text-center">
-      <img src="{{ 'img/home-product.png'|theme_resource }}" alt="">
+      <img src="{{ theme.homeSecondHeaderImage.thumbnail('auto', 'auto') }}" alt="">
     </div>
   </div>
 </div>
@@ -38,8 +38,8 @@ url: /
 <div class="row screen product-drag">
   <div class="content">
     <div class="col-md-7">
-      <h2>Save Today.</h2>
-      <h3>Order your very own Mker and save both money and the environment. <br>Thousands of people are experiencing the difference. Will you take the step and make the difference?</h3>
+      <h2>{{ theme.homeThirdHeaderTitle }}</h2>
+      <h3>{{ content_block('home-text-3') }}</h3>
     </div>
   </div>
 </div>

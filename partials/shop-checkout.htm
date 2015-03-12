@@ -11,7 +11,8 @@
   {% elseif step == 'pay' %}
       <input type="hidden" name="step" value="pay">
   {% endif %}
-<div class="row checkout-row">
+
+<div class="row">
 
 <div class="col-md-9">
   
@@ -62,7 +63,7 @@
 <div id="address-form" class="row" >
 
 {{ open_form({'class': 'custom', 'data-validation-message' : ''}) }}
-  <div class="col-md-12" style="padding-bottom: 0;">
+  <div class="col-md-12 no-padding" style="padding-bottom: 0;">
     <div class="col-md-12 col-sm-12 col-lg-6">
 
       <p id="title-p-d">
@@ -199,7 +200,7 @@
     </div>
     <div class="col-sm-12">
         {% if step == 'billing_info' %}
-          <a href="#top" class="btn btn-important pull-right data-ajax-url" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-totals=shop-checkout-totals, #checkout-page=shop-checkout" data-hash="step-2">Proceed to Shipping</a>
+          <a class="btn btn-default pull-right data-ajax-url" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=shop-checkout, #checkout-totals=shop-checkout-totals" data-hash="step-2">Proceed to Shipping</a>
         {% else %}
           
         {% endif %}
@@ -250,7 +251,7 @@
 {% elseif step == 'shipping_method' %}
   <div class="checkout-content checkout-open ">
 {% elseif step == 'pay' %}
-  <div class="checkout-content">
+  <div class="checkout-content ">
 {% endif %}
 <div id="shop-checkout-shipping-method" class="col-md-12 row">
 {{ open_form({'class': 'custom'}) }}
@@ -268,7 +269,7 @@
             <input type="hidden" value="" name="shippingMethod"><br>
             <table class="compact full-width" id="shipping-methods">
               {% for index, option in shippingOptions %}
-              {% if loop.index == 1 %}
+              {% if loop.index == 0 %}
                 <tr>
                   <td>
                     <label for="{{ 'option'~index }}">
@@ -332,11 +333,11 @@
 
     {% if shippingOptions %}
         <br><br>
-        <a class="btn btn-default pull-left data-ajax-url"
+        <a class="btn btn-default pull-right data-ajax-url " data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=shop-checkout" data-hash="step-3">Proceed to Pay</a>
+        <a class="btn btn-important pull-left data-ajax-url"
         data-ajax-handler="shop:checkout" 
         data-ajax-update="#checkout-page=shop-checkout"
         data-ajax-extra-fields="nextStep=billing_info" data-hash="step-1">Previous Step</a>
-        <a class="btn btn-important pull-right data-ajax-url " data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=shop-checkout" data-hash="step-3">Proceed to Pay</a>
         {{ inputs }}
    {% endif %}
     </div>
@@ -425,7 +426,7 @@
         </div>
 
         
-        <a class="btn btn-default pull-left data-ajax-url"
+        <a class="btn btn-important pull-left data-ajax-url"
         id="previous-shipping-method"
         data-ajax-handler="shop:checkout" 
         data-ajax-update="#checkout-page=shop-checkout"

@@ -6,37 +6,21 @@ website: 'http://dparkd.com'
 engine: twig
 404: '404'
 customFields:
-    storeTitle: {type:text, title:'Title of your Store', default:'Slate'}
+    storeTitle: {type:text, title:'Title of your Store', default:'Mker'}
     faviconImage: {type:image, title:'Favicon Image (Image you see on the chrome)', default:'@img/icon.png'}
-    navbarBackgroundColor: { type:color, title:'Global: Navbar Background Color', default:'white'}
-    navbarLinkColor: { type:color, title:'Global: Navbar Link Color', default:'black'}
-    defaultButtonBorderColor: { type:color, title:'Global: Default Button Border Color', default:'#000'}
-    defaultButtonHoverColor: { type:color, title:'Global: Default Button Hover Color', default:'#000'}
-    importantButtonColor: { type:color, title:'Global: Important Button Color', default:'#6C7A89'}
-    importantButtonHoverColor: {type:color, title:'Global: Important Button Hover Color', default:'#6C7A89'}
-    iconColor: { type:color, title:'Global: Icon Color', default:'#6C7A89'}
     logoImage: { type: image, title: 'Global: Logo Image', default: '@/img/logo.png'}
     bodyTextColor: {type:color, title:'Global: Main text color', default:'#6C7A89'}
     socialFacebookUrl: { type: text, title: 'Global: Facebook URL', default: 'http://facebook.com/lemonstand' }
-    socialTwitterUrl: { type: text, title: 'Global: Twitter URL', default: 'http://twitter.com/D_Hanul_Park' }
+    socialTwitterUrl: { type: text, title: 'Global: Twitter URL', default: 'http://twitter.com/itsdpark' }
     socialInstagramUrl: { type: text, title: 'Global: Instagram URL', default: 'http://instagram.com' }
-    socialTumblrUrl: { type: text, title: 'Global: Tumblr URL', default: 'http://tumblr.com' }
-    subFooterColor: {type:color, title: 'Global: Subfooter Color', default:'#ECF0F1'}
-    mainFooterColor: {type:color, title: 'Global: Mainfooter Color', default:'#3C444C'}
-
-
-    introImageOne: {type:image, title:'Home: Home left image', default:'@img/bg1.jpg'}
-    introImageTwo: {type:image, title:'Home: Home left image', default:'@img/bg2.jpg'}
-
-
-
-    aboutTitleFirst: { type: text, title:'About: Title for first about box', default:'ABOUT URBAN ESSENCE'}
-    aboutTextFirst: { type:text, title:'About: Text for first about box', default:'Urban Essence is a minimalistic LemonStand theme that focuses on the product. This about page is used to tell your customer more about your company.'}
-    aboutImageFirst: { type:image, title:'About: About page first image', default:'@/img/about1.jpg', comment:'Suggestion: Height of image one is the same as height of image two'}
-    aboutQuoteText: { type:text, title:'About: About page quote text', default:'The only real elegance is in the mind; if you&rsquo;ve got that, the rest really comes from it.'}
-    aboutQuoteAuthor: { type:text, title:'About: Author of the Quote', default:'Diana Vreeland'}
-    aboutTitleSecond: { type:text, title:'About: Title for the second about box', default:'ABOUT THE COMPANY'}
-    aboutTextSecond: { type:text, title:'About: Text for the second about box', default:'Put some information about your company. Explain to your customers why you are the best at making/selling your product.'}
-    aboutImageSecond: { type:image, title:'About: About page second image', default:'@/img/about2.jpg', comment:'Suggestion: Height of image two is the same as height of image one'}
+    homeHeaderTitle: { type: text, title: 'HomePage: Header block title', default: 'MAKE A DIFFERENCE'}
+    homeHeaderImage: { type: image, title: 'HomePage: Header Image', default: '@img/product-bg.jpg' }
+    homeSecondHeaderSubTitle: { type: text, title: 'HomePage: Second header sub title', default: 'MKER IS THE PLUG EVERYONE NEEDS'}
+    homeSecondHeaderTitle: { type: text, title: 'HomePage: Second header title', default: 'WHAT IS MKER?'}
+    homeSecondHeaderImage: { type: image, title: 'HomePage: Second header image', default: '@img/home-product.png'}
+    homeThirdHeaderTitle: { type: text, title: 'HomePage: Third header title', default: 'Save Today.'}
+    homeThirdHeaderImage: { type: image, title: 'HomePage: Third header background image', default: '@img/about-bg-2.jpg'}
     shopItemsPerPage: { type:text, title:'Shop: Number of products displayed per page.', default:'15'}
 ---
+
+
