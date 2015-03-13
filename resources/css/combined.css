@@ -36,7 +36,42 @@
   border-top:1px solid #f1f1f1;
 }
 
+.banner .dots {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  padding-left:0;
+}
+.banner .dots li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
 
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  margin: 0 4px;
+
+  text-indent: -999em;
+  *text-indent: 0;
+
+  border: 2px solid #ccc;
+  border-radius: 6px;
+
+  cursor: pointer;
+  opacity: .9;
+
+  -webkit-transition: background .5s, opacity .5s;
+  -moz-transition: background .5s, opacity .5s;
+  transition: background .5s, opacity .5s;
+}
+.banner .dots li.active {
+  background: #ccc;
+  opacity: 1;
+}
 
 
 
@@ -263,7 +298,7 @@ a:hover{
      INDEX PAGE = INTRO
 =============================================*/
 #title{
-  height:550px;
+  min-height:550px;
   padding-top:150px;
   text-align: center;
   position:relative;
@@ -1142,6 +1177,7 @@ a:hover{
   background:white;
 }
 @media screen and (max-width: 991px) {
+  
   .text-right{
     text-align: left;
   }
@@ -1183,6 +1219,9 @@ a:hover{
   }
   .checkout-tab-bar{
     margin-top:10px;
+  }
+  .navbar-nav>li{
+    float:none;
   }
 }
 @media screen and (max-width: 767px){
@@ -1229,10 +1268,22 @@ a:hover{
   }
 }
 
-@media screen and (max-width: 868px) {
+@media screen and (min-width: 1831px) {
+  #title img{
+    width:30%;
+  }
+}
+
+@media screen and (max-width: 991px) {
 /*============================================
         SHOP PAGE
 =============================================*/
+#title{
+    min-height:555px!important;
+  }
+  #title .content{
+    padding-top:230px;
+  }
 .shop-item{
   margin-bottom:100px;
   width:50%;
@@ -1336,6 +1387,9 @@ a:hover{
   .btn-important, .btn-default{
     width:100%;
   }
+  #title .content{
+    padding-top:30px;
+  }
   /*============================================
        NAVIGATION STYLES
   =============================================*/
@@ -1438,13 +1492,13 @@ a:hover{
      INDEX PAGE = INTRO
 =============================================*/
 #title{
-  height:250px;
-  padding-top:150px;
+  padding-top:210px;
   margin-right:0;
   margin-left:0;
 }
 #title img{
   top:50px;
+  width:70%;
 }
 #title h1{
   font-size:1.2em;

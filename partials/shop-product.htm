@@ -9,8 +9,6 @@
 				</li>
 			{% endfor %}
 			</ul>
-			<a class="unslider-arrow prev"><i class="fa fa-chevron-left"></i></a>
-			<a class="unslider-arrow next"><i class="fa fa-chevron-right"></i></a>
 		</div>
 		
 			
@@ -18,8 +16,39 @@
 
 	</div>
 
-	<div id="product-detail" class="col-md-5">
-		{{ partial('product-detail') }}
+	<div id="product-detail" class="col-md-5 row">
+		<h2>{{ product.name }}</h2> 
+			  <p>{{product.description|unescape}}</p>
+			  <p class="price">{{ product.price|currency }}</p>
+			  	{% if on_sale %}
+						<small class="previous-price">{{ product.fullPrice|currency }}</small>
+					{% endif %} 
+			  	{{ partial('shop-product-attributes', {'product':product}) }}
+		{% if product.enabled %}
+		      {{ partial('shop-product-options', {'product':product}) }}
+		      
+		    {% if not product.isOutOfStock() or product.allow_preorder %}
+		      <input type="hidden" name="productId" value="{{ product.id }}"/>
+			      <div class="add-cart-holder form-group">
+			        <div class="quantity-selector">
+			          <label for="quantity">Quantity</label>
+			          <input class="form-control quantity" type="text" value="{{ quantity|default("1") }}" name="quantity"/>
+			        </div>
+			        {{ flash() }}
+			        <a class="btn btn-important btn-add-cart" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#product-detail=product-detail, #cart-totals=cart-totals">Add to Cart  </a>
+			      </div>
+			      
+			    {% else %}
+			      <div class="not-available">
+			        <h5>This product is temporarily unavailable</h5>
+			      <div>
+			    {% endif %}
+			    
+			  {% else %}
+			    <div class="not-available">
+			      <h5>This product is not available</h5>
+			    <div>
+		  {% endif %}
 	</div>
 
 

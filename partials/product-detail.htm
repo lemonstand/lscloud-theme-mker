@@ -5,7 +5,7 @@
 				<small class="previous-price">{{ product.fullPrice|currency }}</small>
 			{% endif %} 
 	  	{{ partial('shop-product-attributes', {'product':product}) }}
-		{% if product.enabled %}
+{% if product.enabled %}
       {{ partial('shop-product-options', {'product':product}) }}
       
     {% if not product.isOutOfStock() or product.allow_preorder %}
