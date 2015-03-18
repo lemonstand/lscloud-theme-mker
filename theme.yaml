@@ -1,12 +1,12 @@
 ---
 name: 'FLAGSHIP'
 description: 'A minimalistic product theme'
-author: 'Daniel Park (@D_Hanul_Park)'
+author: 'Daniel Park (@itsdpark)'
 website: 'http://dparkd.com'
 engine: twig
 404: '404'
 customFields:
-    storeTitle: {type:text, title:'Title of your Store', default:'Mker'}
+    storeTitle: { type:text, title:'Title of your Store', default:'Mker'}
     faviconImage: {type:image, title:'Favicon Image (Image you see on the chrome)', default:'@img/icon.png'}
     logoImage: { type: image, title: 'Global: Logo Image', default: '@/img/logo.png'}
     bodyTextColor: {type:color, title:'Global: Main text color', default:'#6C7A89'}
@@ -22,5 +22,7 @@ customFields:
     homeThirdHeaderImage: { type: image, title: 'HomePage: Third header background image', default: '@img/about-bg-2.jpg'}
     shopItemsPerPage: { type:text, title:'Shop: Number of products displayed per page.', default:'15'}
 ---
+
+
 
 
