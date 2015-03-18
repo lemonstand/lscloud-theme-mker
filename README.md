@@ -1,7 +1,7 @@
 MKER
 =============
 
-### [MKER](https://mker.lemonstand.com/) is a minimal theme for [LemonStand](https://lemonstand.com/).
+### [MKER](https://mker.lemonstand.com/) is a tech product theme for [LemonStand](https://lemonstand.com/).
 
 Created by: [Daniel Park](http://dparkd.com) ([@itsdpark](https://twitter.com/itsdpark))
 
