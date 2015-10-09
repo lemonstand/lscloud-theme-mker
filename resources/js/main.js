@@ -37,7 +37,8 @@ $(window).load(function() {
   var unslider = $('.banner').unslider({
         fluid: true,
         dots: true,
-        delay: false
+        delay: false,
+        keys: true
   });
 
 $('.unslider-arrow').click(function() {
