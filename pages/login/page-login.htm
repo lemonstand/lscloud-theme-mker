@@ -38,7 +38,7 @@ url: /login
                         <a class="btn btn-sm btn-link forgotpass" href="{{ site_url('password-restore') }}">Forgot your password?</a>
                     </div>
                 </div>
-                
+
                 <input type="hidden" name="redirect" value="{{ site_url(root_url('/')) }}"/>
       
             {{ close_form() }}
@@ -89,6 +89,8 @@ url: /login
                         <span class="error small text-danger"></span>
                     </div>
                 </div>
+
+                <input type="checkbox" name="accepts_marketing" checked/> <label>Receive promotional emails</label>
 
                 <div class="form-group">
                     <div class="col-sm-12">
