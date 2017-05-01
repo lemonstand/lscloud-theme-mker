@@ -3,6 +3,16 @@
   "version": "1.0.0",
   "description": "Mker was designed and created for stores or merchants who have flagship products. The theme allows you to turn the spotlight on your product and draw attention to it. It lets you create an engaging story around the product and connect with customers emotionally.",
   "main": "index.js",
+  "lemonstand" : {
+    "code":"meyer",
+    "type": "theme",
+    "options": "options.json",
+    "demo" : "https//meyer.lemonstand.com",
+    "screenshot" : {
+      "small":"https://raw.githubusercontent.com/lemonstand/lemonstand_mker_repository/master/resources/screenshots/tiny-square.png",
+      "large":"https://raw.githubusercontent.com/lemonstand/lemonstand_mker_repository/master/resources/screenshots/large-square.png"
+    }
+  },  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
