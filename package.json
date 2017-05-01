@@ -1,0 +1,19 @@
+{
+  "name": "mker",
+  "version": "1.0.0",
+  "description": "Mker was designed and created for stores or merchants who have flagship products. The theme allows you to turn the spotlight on your product and draw attention to it. It lets you create an engaging story around the product and connect with customers emotionally.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemonstand/lscloud-theme-mker.git"
+  },
+  "author": "Bruce Alderson <bruce@lemonstand.com> (http://lemonstand.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lemonstand/lscloud-theme-mker/issues"
+  },
+  "homepage": "https://github.com/lemonstand/lscloud-theme-mker#readme"
+}
