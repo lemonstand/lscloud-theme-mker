@@ -1,0 +1,82 @@
+{
+  "settings": {
+    "storeTitle": {
+      "type": "text",
+      "title": "Title of your Store",
+      "default": "Mker"
+    },
+    "faviconImage": {
+      "type": "image",
+      "title": "Favicon Image (Image you see in the browser)",
+      "default": "@img/icon.png"
+    },
+    "logoImage": {
+      "type": "image",
+      "title": "Global: Logo Image",
+      "default": "@/img/logo.png"
+    },
+    "bodyTextColor": {
+      "type": "color",
+      "title": "Global: Main text color",
+      "default": "#6C7A89"
+    },
+    "socialFacebookUrl": {
+      "type": "text",
+      "title": "Global: Facebook URL",
+      "default": "http://facebook.com/lemonstand"
+    },
+    "socialTwitterUrl": {
+      "type": "text",
+      "title": "Global: Twitter URL",
+      "default": "http://twitter.com/itsdpark"
+    },
+    "socialInstagramUrl": {
+      "type": "text",
+      "title": "Global: Instagram URL",
+      "default": "http://instagram.com"
+    },
+    "homeHeaderTitle": {
+      "type": "text",
+      "title": "HomePage: Header block title",
+      "default": "MAKE A DIFFERENCE"
+    },
+    "homeHeaderImage": {
+      "type": "image",
+      "title": "HomePage: Header Image",
+      "default": "@img/product-bg.jpg"
+    },
+    "homeSecondHeaderSubTitle": {
+      "type": "text",
+      "title": "HomePage: Second header sub title",
+      "default": "MKER IS THE PLUG EVERYONE NEEDS"
+    },
+    "homeSecondHeaderTitle": {
+      "type": "text",
+      "title": "HomePage: Second header title",
+      "default": "WHAT IS MKER?"
+    },
+    "homeSecondHeaderImage": {
+      "type": "image",
+      "title": "HomePage: Second header image",
+      "default": "@img/home-product.png"
+    },
+    "homeThirdHeaderTitle": {
+      "type": "text",
+      "title": "HomePage: Third header title",
+      "default": "Save Today."
+    },
+    "homeThirdHeaderImage": {
+      "type": "image",
+      "title": "HomePage: Third header background image",
+      "default": "@img/about-bg-2.jpg"
+    },
+    "shopItemsPerPage": {
+      "type": "text",
+      "title": "Shop: Number of products displayed per page.",
+      "default": "15"
+    }
+  },
+  "pages": {
+    "404": "404"
+  }
+}
