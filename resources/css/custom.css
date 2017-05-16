@@ -12,7 +12,7 @@
 }
 .card-table th {
     padding: 10px;
-    color: #4A4A4A;
+    color: #3A3D3F;
 }
 .card-table a,
 .card-table a:hover,
@@ -49,4 +49,42 @@
     background: white;
     color: #00bbde;
     border: 2px solid #00bbde;
+}
+.ls-card-form .card-form-input {
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    font-family: inherit;
+    box-shadow: none;
+}
+.ls-card-form .card-form-input:focus {
+    border-color: black;
+    background-color: inherit;
+}
+.ls-card-form .card-form-input::-webkit-input-placeholder {
+    font-family: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    color: #D4D4D4;
+}
+.ls-card-form .card-form-input:-moz-placeholder {
+    /* Firefox 18- */
+    
+    font-family: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    color: #D4D4D4;
+}
+.ls-card-form .card-form-input::-moz-placeholder {
+    /* Firefox 19+ */
+    
+    font-family: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    color: #D4D4D4;
+}
+.ls-card-form .card-form-input:-ms-input-placeholder {
+    font-family: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    color: #D4D4D4;
 }
