@@ -1,6 +1,6 @@
 <div class="card-form-close" id="add-card-form">
     <div class="add-card-form">
-        <h2>Add Card</h2>
+        <p id="title-p">Add Card</p>
         <div class="add-card-form-container">
             {{ customerCardForm('add', {
                 options: {
@@ -25,10 +25,10 @@
                         placeholder: 'Cardholder Name'
                     },
                     submit: {
-                    class: 'button next'
+                        class: 'btn btn-default'
                     },
                     delete: {
-                        class: 'button next'
+                        class: 'btn btn-default'
                     }
                 }
             }, {

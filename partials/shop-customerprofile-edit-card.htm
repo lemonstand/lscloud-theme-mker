@@ -1,9 +1,9 @@
-<div>
-    <div class="form-row">
-        <h2>Saved Cards</h2>
-        <hr>
-    </div>
-    <div class="form-col-sm form-col-left">
+<div class="row">
+
+<p id="title-p">Saved Cards</p>
+
+<div class="panel-collapse collapse in col-md-6">
+    <div>
         <div class="form-row">
             {% if customer.cards|length %}
             <table class="card-table">
@@ -34,17 +34,21 @@
                     No saved cards available.
                 </p>
             {% endif %}
+            <div class="form-row">
+                <input type="button" class="btn btn-default" id="add-card" value="Add Card">
+            </div>
+            {{ flash() }}
         </div>
-        <div class="form-row">
-            <input type="button" class="button next" id="add-card" value="Add Card">
-        </div>
-        {{ flash() }}
     </div>
-    <div class="form-col-sm form-col-right">
+</div>
+
+<div class="panel-collapse collapse in col-md-6">
+    <div>
         {% for card in customer.cards %}
             {{ partial('shop-customerprofile-edit-card-form', {'card' : card}) }}
         {% endfor %}
         
         {{ partial('shop-customerprofile-add-card-form') }}
     </div>
+</div>
 </div>
