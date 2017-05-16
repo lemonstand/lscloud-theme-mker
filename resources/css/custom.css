@@ -1,0 +1,27 @@
+/* Card Form */
+
+.ls-card-form {
+    width: 100%;
+}
+.card-form-expiry-outer label {
+    display: inherit;
+}
+.card-table {
+    font-size: 15px;
+    background-color: #F9F9F9;
+}
+.card-table th {
+    padding: 10px;
+    color: #4A4A4A;
+}
+.card-table a,
+.card-table a:hover,
+.card-table a:focus {
+    text-decoration: underline;
+}
+.card-form-close {
+    display: none;
+}
+.card-form-open {
+    display: block;
+}
