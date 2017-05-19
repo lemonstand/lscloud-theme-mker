@@ -97,3 +97,7 @@
 .ls-card-form .valid-highlight:focus {
     border-color: #3DE000 !important;
 }
+.edit-card-form #title-p,
+.add-card-form #title-p {
+    padding-top: 0px;
+}
