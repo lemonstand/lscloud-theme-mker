@@ -9,8 +9,8 @@
     "options": "options.json",
     "demo" : "https//mker.lemonstand.com",
     "screenshots" : {
-      "small":"https://raw.githubusercontent.com/lemonstand/lemonstand_mker_repository/master/resources/screenshots/tiny-square.png",
-      "large":"https://raw.githubusercontent.com/lemonstand/lemonstand_mker_repository/master/resources/screenshots/large-square.png"
+      "small":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-mker/master/resources/screenshots/tiny-square.png",
+      "large":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-mker/master/resources/screenshots/large-square.png"
     }
   },
   "scripts": {
