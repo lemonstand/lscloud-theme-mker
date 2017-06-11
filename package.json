@@ -1,7 +1,7 @@
 {
   "name": "mker",
   "version": "1.0.0",
-  "description": "Mker was designed and created for stores or merchants who have flagship products. The theme allows you to turn the spotlight on your product and draw attention to it. It lets you create an engaging story around the product and connect with customers emotionally.",
+  "description": "Mker was designed and created for stores or merchants who have flagship products, especially for retailers selling tech gadgets. The theme allows you to turn the spotlight on your product and draw attention to it. It lets you create an engaging story around the product and connect with customers emotionally. This theme is responsive and uses a vertical style slide out navigatin.",
   "main": "index.js",
   "lemonstand" : {
     "code":"mker",
@@ -25,5 +25,10 @@
   "bugs": {
     "url": "https://github.com/lemonstand/lscloud-theme-mker/issues"
   },
-  "homepage": "https://github.com/lemonstand/lscloud-theme-mker#readme"
+  "homepage": "https://github.com/lemonstand/lscloud-theme-mker#readme",
+  "keywords": [
+    "responsive",
+    "1-page-checkout",
+    "responsive"
+  ]
 }
