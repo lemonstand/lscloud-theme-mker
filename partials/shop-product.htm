@@ -17,7 +17,7 @@
 	</div>
 
 	<div id="product-detail" class="col-md-5 row">
-		<h2>{{ product.name }}</h2>
+		<h2>{{ product.name }}</h2> 
 			  <p>{{product.description|unescape}}</p>
 			  <p class="price">{{ product.price|currency }}</p>
 			  	{% if on_sale %}

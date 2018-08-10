@@ -1,13 +1,13 @@
 ---
-name: 'MKER'
-description: 'A minimalistic theme for modern products'
+name: 'FLAGSHIP'
+description: 'A minimalistic product theme'
 author: 'Daniel Park (@itsdpark)'
 website: 'http://dparkd.com'
 engine: twig
 404: '404'
 customFields:
     storeTitle: { type:text, title:'Title of your Store', default:'Mker'}
-    faviconImage: {type:image, title:'Favicon Image (Image you see in the browser)', default:'@img/icon.png'}
+    faviconImage: {type:image, title:'Favicon Image (Image you see on the chrome)', default:'@img/icon.png'}
     logoImage: { type: image, title: 'Global: Logo Image', default: '@/img/logo.png'}
     bodyTextColor: {type:color, title:'Global: Main text color', default:'#6C7A89'}
     socialFacebookUrl: { type: text, title: 'Global: Facebook URL', default: 'http://facebook.com/lemonstand' }
