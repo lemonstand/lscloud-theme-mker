@@ -1,6 +1,0 @@
-{
-  "theme_code": "mker",
-  "store": "https://mker.lemonstand.com",
-  "api_token": "T5itLIdYASBlaUI6N0X8bUPL1NH6PhPIhRbAHhLy",
-  "ignore_patterns": [ "*.tmp", ".git", "lemonsync.json" ]
-}
